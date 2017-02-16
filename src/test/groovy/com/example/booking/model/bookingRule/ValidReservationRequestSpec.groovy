@@ -18,10 +18,9 @@ import java.time.ZoneOffset
  * Created by deadlock on 15/2/17.
  */
 class ValidReservationRequestSpec extends Specification {
-    Clock fixedClock = Clock.fixed(LocalDateTime.of(2017, 1, 26, 23, 00, 00).toInstant(ZoneOffset.UTC), ZoneId.systemDefault());
 
     @Subject
-    ValidReservationRequest validReservationRequest = new ValidReservationRequest(fixedClock)
+    ValidReservationRequest validReservationRequest = new ValidReservationRequest()
 
     ReservationRequest reservationRequest
     Bookable bookable = Mock(Bookable)

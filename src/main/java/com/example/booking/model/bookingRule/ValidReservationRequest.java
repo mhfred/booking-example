@@ -13,16 +13,8 @@ import java.util.Calendar;
  * Created by deadlock on 15/2/17.
  */
 public class ValidReservationRequest implements BookingRule {
-    private Clock clock;
+
     private static final Integer DAYS_IN_ADVANCE = 7;
-
-    public ValidReservationRequest(Clock clock) {
-        this.clock = clock;
-    }
-
-    public ValidReservationRequest() {
-        this.clock = Clock.systemDefaultZone();
-    }
 
     @Override
     public void validate(ReservationRequest reservationRequest, Bookable bookable) throws BookingException {
@@ -73,7 +65,7 @@ public class ValidReservationRequest implements BookingRule {
 
     private void beginIsInFuture(ReservationRequest reservationRequest) throws InvalidReservationRequestException {
         Calendar now = Calendar.getInstance();
-        now.setTimeInMillis(Instant.now(clock).toEpochMilli());
+        now.setTimeInMillis(Instant.now().toEpochMilli());
 
         if(!now.before(reservationRequest.getBegin())){
             throw new InvalidReservationRequestException("reservation request begin is not in future");
@@ -82,7 +74,7 @@ public class ValidReservationRequest implements BookingRule {
 
     private void beginIsNotAfterDaysInAdvance(ReservationRequest reservationRequest) throws InvalidReservationRequestException {
         Calendar daysLater = Calendar.getInstance();
-        daysLater.setTimeInMillis(Instant.now(clock).toEpochMilli());
+        daysLater.setTimeInMillis(Instant.now().toEpochMilli());
         daysLater.add(Calendar.DATE, DAYS_IN_ADVANCE);
 
         if(daysLater.before(reservationRequest.getBegin())){
