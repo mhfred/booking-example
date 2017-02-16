@@ -2,7 +2,10 @@
 现有Meeting Room一间， Foosball Table 一张， 因需求时间经常发生冲突， 希望能有一个系统让多人可以预定
 
 ## 目标：
-为了简化模型，现准备实现 **任意用户** 可以预定 未来 **七天** 的Meeting Room 和 Foosball，预定时间至多为 **两个小时**， 
+为了简化模型，现准备实现 **任意用户** 可以预定 未来 **七天** 的Meeting Room 和 Foosball，
+Meeting Room预定时间至多为 **两个小时**， Foosball 预定时间为 **一个小时**。
+Meeting Room 只接受 **weekdays** 的预定， Foosball 只接受 **weekend** 的预定
+ 
 用户可以 **预定**、 **更改**、 **查询**、 **取消**
 
 ## 示例相关技术：
