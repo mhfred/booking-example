@@ -47,9 +47,7 @@ class NoOverlapForCreateRequestSpec extends Specification {
 
         where:
         begin                                          | end
-        new GregorianCalendar(2017, 0, 30, 11, 00, 00) | new GregorianCalendar(2017, 0, 30, 13, 00, 00)
-        new GregorianCalendar(2017, 0, 31, 00, 00, 00) | new GregorianCalendar(2017, 0, 31, 1, 00, 00)
-        new GregorianCalendar(2017, 0, 31, 13, 00, 00) | new GregorianCalendar(2017, 0, 31, 23, 00, 00)
+
     }
 
     @Unroll
@@ -70,10 +68,6 @@ class NoOverlapForCreateRequestSpec extends Specification {
 
         where:
         begin                                          | end
-        new GregorianCalendar(2017, 0, 31, 11, 30, 00) | new GregorianCalendar(2017, 0, 31, 13, 00, 00)
-        new GregorianCalendar(2017, 0, 31, 11, 00, 00) | new GregorianCalendar(2017, 0, 31, 12, 00, 00)
-        new GregorianCalendar(2017, 0, 31, 11, 00, 00) | new GregorianCalendar(2017, 0, 31, 13, 00, 00)
-        new GregorianCalendar(2017, 0, 31, 10, 00, 00) | new GregorianCalendar(2017, 0, 31, 14, 00, 00)
-        new GregorianCalendar(2017, 0, 31, 12, 00, 00) | new GregorianCalendar(2017, 0, 31, 12, 30, 00)
+
     }
 }
