@@ -37,6 +37,7 @@ class MaxTwoHourOnlySpec extends Specification {
         new GregorianCalendar(2017,0,30,11,00,00) | new GregorianCalendar(2017,0,30,13,00,00)
         new GregorianCalendar(2017,0,30,23,00,00) | new GregorianCalendar(2017,0,31,1,00,00)
         new GregorianCalendar(2017,0,30,22,00,00) | new GregorianCalendar(2017,0,31,00,00,00)
+        new GregorianCalendar(2017,0,30,22,00,00) | new GregorianCalendar(2017,0,30,23,59,59)
     }
 
     @Unroll
@@ -57,7 +58,7 @@ class MaxTwoHourOnlySpec extends Specification {
         new GregorianCalendar(2017,0,30,11,00,00) | new GregorianCalendar(2017,0,30,14,00,00)
         new GregorianCalendar(2017,0,30,11,00,00) | new GregorianCalendar(2017,0,30,13,00,01)
         new GregorianCalendar(2017,0,30,23,00,00) | new GregorianCalendar(2017,0,31,1,00,01)
-        new GregorianCalendar(2017,0,30,22,00,00) | new GregorianCalendar(2017,0,31,00,00,01)
+        new GregorianCalendar(2017,0,30,22,00,00) | new GregorianCalendar(2017,0,31,01,00,00)
         new GregorianCalendar(2017,0,30,11,00,00) | new GregorianCalendar(2017,0,31,11,00,00)
     }
 }

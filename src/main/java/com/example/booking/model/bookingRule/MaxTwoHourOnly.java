@@ -17,9 +17,9 @@ public class MaxTwoHourOnly implements BookingRule {
         Calendar end = reservationRequest.getEnd();
 
         long duration = Math.abs(begin.getTimeInMillis() - end.getTimeInMillis());
-        boolean greaterThanTwoHour = duration - 2*1000*3600 > 0;
+        boolean lessOrEqualToTwoHours = duration /(1000*3600) < 2;
 
-        if(greaterThanTwoHour){
+        if(!lessOrEqualToTwoHours){
             throw new BookingRuleViolationException("request duration is greater than two hours");
         }
     }
